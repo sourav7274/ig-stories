@@ -50,7 +50,7 @@ function App() {
   const handleStoryProgress = useCallback((userId, storyIndex) => {
     setUserStoryProgress(prev => ({
       ...prev,
-      [userId]: storyIndex
+      [String(userId)]: storyIndex
     }));
   }, []);
 
