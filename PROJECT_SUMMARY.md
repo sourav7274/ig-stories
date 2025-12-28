@@ -165,7 +165,7 @@ All images are sourced from Unsplash (free, high-quality).
 - **Continuous Viewing**: Automatically transitions to the next user when the current user's stories are finished.
 - **Segmented Progress Rings**: Dynamic "WhatsApp-style" segmented rings with grey (seen) and gradient (unseen) states.
 - **Full Screen Immersive**: Story images now fill the entire screen behind the header for a premium, edgeless look.
-- **Seen State Tracking**: Fully seen stories become grey, partially seen rings show both grey and gradient segments.
+- **Seen State Tracking**: Precise "Dave Johnson" style tracking: segments turn grey individually as stories are viewed.
 
 ### 🎯 Next Steps (Optional Enhancements)
 

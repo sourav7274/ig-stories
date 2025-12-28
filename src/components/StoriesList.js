@@ -42,8 +42,8 @@ const StoryRing = ({ totalStories, seenCount, isFullySeen }) => {
       </defs>
       {Array.from({ length: totalStories }).map((_, index) => {
         const isSeen = isFullySeen || index < seenCount;
-        // Seen segments should be grey, unseen should be gradient
-        const strokeColor = isSeen ? "#555555" : "url(#primary-gradient)";
+        // Seen segments should be grey (shaded), unseen should be gradient
+        const strokeColor = isSeen ? "#666666" : "url(#primary-gradient)";
         
         return (
           <circle
