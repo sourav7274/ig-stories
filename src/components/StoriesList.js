@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StoriesList = ({ stories, onStoryClick }) => {
+const StoriesList = ({ stories, onStoryClick, seenUserIds }) => {
   if (!stories || stories.length === 0) {
     return (
       <div className="empty-state">
@@ -28,7 +28,7 @@ const StoriesList = ({ stories, onStoryClick }) => {
             }}
             aria-label={`View ${userStory.username}'s story`}
           >
-            <div className="story-avatar-wrapper">
+            <div className={`story-avatar-wrapper ${seenUserIds.includes(userStory.id) ? 'seen' : ''}`}>
               <img
                 src={userStory.userAvatar}
                 alt={userStory.username}

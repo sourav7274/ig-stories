@@ -153,7 +153,16 @@ All images are sourced from Unsplash (free, high-quality).
 - ✅ Removed unused `setIsPaused` state variable
 - ✅ Fixed React Hook dependency warnings
 - ✅ Removed duplicate function declarations
+- ✅ Fixed infinite render loop in auto-advance logic
+- ✅ Auto-advance functionality fully stable
 - ✅ All ESLint warnings resolved
+
+### ✨ New Enhancements (v1.1)
+
+- **Smart Resumption**: Stories resume exactly where you left off if you close and reopen a user's story.
+- **Continuous Viewing**: Automatically transitions to the next user when the current user's stories are finished.
+- **Seen State Tracking**: Visual grey ring indicator for fully viewed user stories.
+- **Clean UI**: Restored the classic premium full-screen interface for better usability.
 
 ### 🎯 Next Steps (Optional Enhancements)
 

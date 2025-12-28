@@ -103,9 +103,18 @@ body {
   transition: all 0.3s ease;
 }
 
+.story-avatar-wrapper.seen {
+  background: #4a4a4a; /* Grey color for seen stories */
+  padding: 2px;
+}
+
 .story-item:hover .story-avatar-wrapper {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.story-item:hover .story-avatar-wrapper.seen {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .story-avatar {
@@ -155,7 +164,8 @@ body {
 .story-viewer {
   width: 100%;
   max-width: 480px;
-  height: 100vh;
+  height: 100%; /* Occupy full height on mobile */
+  max-height: 100vh;
   position: relative;
   background: #000;
   display: flex;
@@ -273,6 +283,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .story-image {
@@ -280,6 +291,17 @@ body {
   height: 100%;
   object-fit: contain;
   background: #000;
+  /* Simple fade animation instead of zoom */
+  animation: simpleFade 0.3s ease;
+}
+
+@keyframes simpleFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .story-image.loading {
@@ -295,6 +317,7 @@ body {
   cursor: pointer;
   z-index: 5;
   transition: background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .story-nav:active {
@@ -358,7 +381,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* Responsive Design - Mobile First */
+/* Responsive Design */
 @media (min-width: 768px) {
   .app-header h1 {
     font-size: 32px;
@@ -379,47 +402,5 @@ body {
     overflow: hidden;
     height: 90vh;
     max-height: 800px;
-  }
-}
-
-/* Smooth Transitions */
-.story-transition-enter {
-  opacity: 0;
-  transform: scale(0.95);
-}
-
-.story-transition-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.story-transition-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.story-transition-exit-active {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Touch Feedback */
-@media (hover: none) and (pointer: coarse) {
-  .story-item:hover .story-avatar-wrapper {
-    transform: none;
-    box-shadow: none;
   }
 }
